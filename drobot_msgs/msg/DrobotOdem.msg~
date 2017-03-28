@@ -1,0 +1,19 @@
+Header header
+
+# Travel pules for each wheel
+int32 left_front_travel
+int32 right_front_travel
+int32 left_rear_travel
+int32 right_rear_travel
+
+# Travel speed for each wheel, in m/s
+int32 left_front_speed
+int32 right_front_speed
+int32 left_rear_speed
+int32 right_rear_speed
+
+# Turn angle for each wheel, in degree
+int32 left_front_angle
+int32 right_front_angle
+int32 left_rear_angle
+int32 right_rear_angle

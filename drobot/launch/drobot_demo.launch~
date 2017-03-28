@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<launch>
+    <arg name="port" default="$(optenv DROBOT_PORT /dev/ttyUSB0)" />
+
+    <!-- Load robot description -->
+    <!-- <include file="$(find drobot_description)/launch/description.launch"/> -->
+
+    <!-- Drobot harware driver -->
+
+    <node pkg="drobot" type="drobot_node" name="drobot_node">
+        <rosparam subst_value="true">
+            port: $(arg port)
+            control_frequency: 10.0
+            diagnostic_frequency: 1.0
+            max_speed: 5
+            wheel_diameter: 0.2540
+            polling_timeout: 10.0
+
+            left_front_steer_max_: 11
+            left_front_steer_min_: -51
+            right_front_steer_max_: 51
+            right_front_steer_min_: -11
+            left_rear_steer_max_: 51
+            left_rear_steer_min_: -11
+            right_rear_steer_max_: 11
+            right_rear_steer_min_: -51
+        </rosparam>
+    </node>
+    <node name="joystick" pkg="joy" type="joy_node"/>
+    <node name="teleop_decode" pkg="drobot_control" type="teleop_node"/>
+
+    <!-- Differential controller parameters and basic localization -->
+    <!-- <include file="$(find drobot_control)/launch/control.launch" /> -->
+
+    <!--Teleop -->
+    <!-- <include file="$(find drobot_control)/launch/teleop.launch" /> -->
+
+    <!-- Diagnostic Aggregator -->
+    <!-- <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator">
+        <rosparam command="load" file="$(find drobot_base)/config/diagnostics.yaml"/>
+    </node> -->
+
+
+</launch>
