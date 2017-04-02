@@ -13,7 +13,7 @@
             port: $(arg port)
             control_frequency: 10.0
             diagnostic_frequency: 1.0
-            max_speed: 5
+            max_speed: 2.0
             wheel_diameter: 0.2540
             polling_timeout: 10.0
 

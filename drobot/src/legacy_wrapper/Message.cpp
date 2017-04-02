@@ -279,80 +279,12 @@ namespace drobot
 
 	  switch (type)
 	  {
-	    case DATA_ACCEL:
-	      return new DataPlatformAcceleration(input, msg_len);
-
-	    case DATA_ACCEL_RAW:
-	      return new DataRawAcceleration(input, msg_len);
-
-	    case DATA_ACKERMANN_SETPTS:
-	      return new DataAckermannOutput(input, msg_len);
-
-	    case DATA_CURRENT_RAW:
-	      return new DataRawCurrent(input, msg_len);
-
-	    case DATA_PLATFORM_NAME:
-	      return new DataPlatformName(input, msg_len);
-
-	    case DATA_DIFF_CTRL_CONSTS:
-	      return new DataDifferentialControl(input, msg_len);
-
-	    case DATA_DIFF_WHEEL_SPEEDS:
-	      return new DataDifferentialSpeed(input, msg_len);
-
-	    case DATA_DIFF_WHEEL_SETPTS:
-	      return new DataDifferentialOutput(input, msg_len);
-
-	    case DATA_DISTANCE_DATA:
-	      return new DataRangefinders(input, msg_len);
-
-	    case DATA_DISTANCE_TIMING:
-	      return new DataRangefinderTimings(input, msg_len);
-
-	    case DATA_ECHO:
-	      return new DataEcho(input, msg_len);
 
 	    case DATA_ENCODER:
 	      return new DataEncoders(input, msg_len);
 
 	    case DATA_SYSTEM_STATUS :
 	      return new DataSystemStatus(input, msg_len);
-
-	    // case DATA_ENCODER_RAW:
-	    //   return new DataEncodersRaw(input, msg_len);
-
-	    case DATA_FIRMWARE_INFO:
-	      return new DataFirmwareInfo(input, msg_len);
-
-	    case DATA_MAX_ACCEL:
-	      return new DataMaxAcceleration(input, msg_len);
-
-	    case DATA_MAX_SPEED:
-	      return new DataMaxSpeed(input, msg_len);
-
-	    case DATA_PLATFORM_INFO:
-	      return new DataPlatformInfo(input, msg_len);
-
-	    case DATA_POWER_SYSTEM:
-	      return new DataPowerSystem(input, msg_len);
-
-	    case DATA_PROC_STATUS:
-	      return new DataProcessorStatus(input, msg_len);
-
-	    // case DATA_SAFETY_SYSTEM:
-	    //   return new DataSafetySystemStatus(input, msg_len);
-
-	    // case DATA_SYSTEM_STATUS:
-	    //   return new DataSystemStatus(input, msg_len);
-
-	    case DATA_TEMPERATURE_RAW:
-	      return new DataRawTemperature(input, msg_len);
-
-	    case DATA_VELOCITY_SETPT:
-	      return new DataVelocity(input, msg_len);
-
-	    case DATA_VOLTAGE_RAW:
-	      return new DataRawVoltage(input, msg_len);
 
 	    default:
 	      return new Message(input, msg_len);

@@ -28,14 +28,11 @@ namespace drobot_base
 		void limitAngleSpeed(drobot_msgs::DrobotControl &control_msg);
 		ros::NodeHandle nh_, private_nh_;
 
-		// Diagnostics
-
 		ros::Publisher pub_odometry;
 
 		ros::Publisher pub_diagnostic;
 
-		//
-		ros::Subscriber sub_control; //joy stick sub
+		ros::Subscriber sub_control; 
 
 		drobot_msgs::DrobotControl cmd_msgs;
 
@@ -45,8 +42,6 @@ namespace drobot_base
 
 		// ROS Parameters
 		double wheel_diameter_, max_speed_;
-
-		double max_angle_, min_angle_;
 
 		double left_front_angle_offset_, right_front_angle_offset_;
 		double left_rear_angle_offset_, right_rear_angle_offset_;

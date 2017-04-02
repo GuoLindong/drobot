@@ -18,7 +18,8 @@ int8 rf_turn_pwm
 int8 lr_turn_pwm
 int8 rr_turn_pwm
 
-# error condition for each wheel
+# error condition for each wheel, 0 no error 2 locked rotor 
+# 3 Holzer error 4 cannot reach target speed
 int8 lf_error
 int8 rf_error
 int8 lr_error

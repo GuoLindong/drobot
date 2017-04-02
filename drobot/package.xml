@@ -2,18 +2,15 @@
 <package>
   <name>drobot</name>
   <version>0.2.6</version>
-  <description>Clearpath Husky robot driver</description>
+  <description>Drobot driver</description>
 
-  <author email="mpurvis@clearpathrobotics.com">Mike Purvis</author>
-  <author email="pbovbel@clearpathrobotics.com">Paul Bovbel</author>
+  <author email="xiongfengcai@gmail.com">Cai</author>
 
-  <maintainer email="pbovbel@clearpathrobotics.com">Paul Bovbel</maintainer>
+  <maintainer email="xiongfengcai@gmail.com">Cai</maintainer>
 
   <license>BSD</license>
 
-  <url type="website">http://ros.org/wiki/husky_base</url>
-  <url type="bugtracker">https://github.com/husky/husky_robot/issues</url>
-  <url type="repository">https://github.com/husky/husky_robot</url>
+  <url type="repository">https://github.com/NianxingTech/drobot</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>controller_manager</build_depend>

@@ -13,7 +13,9 @@ float64 left_rear_steer
 float64 right_rear_steer
 
 # Robot Mode
-bool stop_mode
-bool point_turn_mode
+bool stop_mode 
+bool point_turn_mode 
+
+#1 low speed, 2 high speed
 int8 gear_mode
 

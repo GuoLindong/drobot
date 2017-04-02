@@ -12,11 +12,6 @@
 #include "drobot_msgs/DrobotControl.h"
 #include "drobot_control/control_convert.h"
 
-#define KEYCODE_R 0x43 
-#define KEYCODE_L 0x44
-#define KEYCODE_U 0x41
-#define KEYCODE_D 0x42
-#define KEYCODE_Q 0x71
 
 class teleop_twist
 {
@@ -36,7 +31,7 @@ private:
   	bool stopFlag;
 
   	ros::NodeHandle nh;
-  	ros::Publisher cmd_pub;
+  	ros::Publisher cmd_pub; //command info pub
   	ros::Subscriber sub_js; //joy stick sub
 };
 

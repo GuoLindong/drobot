@@ -30,7 +30,7 @@ namespace legacy_wrapper
     typedef boost::shared_ptr<const T> ConstPtr;
     BOOST_STATIC_ASSERT_MSG(
       (boost::is_base_of<drobot::Message, T>::value),
-      "T must be a descendant of clearpath::Message"
+      "T must be a descendant of drobot::Message"
     );
 
     static Ptr getLatest(double timeout)

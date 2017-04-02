@@ -3,11 +3,6 @@
 #include <cstdlib>
 #include "drobot/legacy_wrapper/drobot.h"
 
-// namespace
-// {
-//   const uint8_t LEFT = 0, RIGHT = 1;
-// };
-
 namespace drobot_base
 {
 
@@ -20,10 +15,8 @@ namespace drobot_base
     private_nh_(private_nh)
   {
     private_nh_.param<double>("wheel_diameter", wheel_diameter_, 0.254);
-    private_nh_.param<double>("max_speed", max_speed_, 5);
+    private_nh_.param<double>("max_speed", max_speed_, 2.0);
     private_nh_.param<double>("polling_timeout_", polling_timeout_, 10.0);
-    private_nh_.param<double>("max_angle", max_angle_, 51.0);
-    private_nh_.param<double>("min_angle", min_angle_, 11.0); 
 
     private_nh_.param<double>("left_front_angle_offset", left_front_angle_offset_, 0.0);
     private_nh_.param<double>("right_front_angle_offset", right_front_angle_offset_, 0.0);
@@ -42,12 +35,13 @@ namespace drobot_base
     std::string port;
     private_nh_.param<std::string>("port", port, "/dev/ttyUSB0");
 
-    cmd_msgs.left_front_speed = 0; //
+
+    cmd_msgs.left_front_speed = 0; 
     cmd_msgs.right_front_speed = 0;
     cmd_msgs.left_rear_speed = 0;
     cmd_msgs.right_rear_speed = 0;
 
-    cmd_msgs.left_front_steer = 0; //
+    cmd_msgs.left_front_steer = 0; 
     cmd_msgs.right_front_steer = 0;
     cmd_msgs.left_rear_steer = 0;
     cmd_msgs.right_rear_steer = 0;
@@ -72,7 +66,7 @@ namespace drobot_base
   }
 
   /**
-  * Get latest velocity commands from ros_control via joint structure, and send to MCU
+  * Get latest command info, and send to MCU
   */
   void DrobotHardware::writeCommandsToHardware()
   {
@@ -106,10 +100,7 @@ namespace drobot_base
       status_msgs.rr_turn_pwm = dia->getRrTurnPwm();
       status_msgs.rr_error = dia->getRrError();
       pub_diagnostic.publish(status_msgs);
-      //dia->getLeftFrontTravel()
     }
-
-
 
   }
 
@@ -142,7 +133,7 @@ namespace drobot_base
   }
 
   /**
-  * Scale left and right speed outputs to maintain ros_control's desired trajectory without saturating the outputs
+  * Limit speed and angle of command to send to MCU
   */
   void DrobotHardware::limitAngleSpeed(drobot_msgs::DrobotControl &control_msg)
   {

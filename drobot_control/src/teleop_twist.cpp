@@ -20,13 +20,13 @@ void teleop_twist::teleopLoop()
       control_msgs.gear_mode = 1;
     }
 
-    //按键A 四轮转向
+    //按键A 四轮转向 Low speed 
     if(js_buttons[0]==1){
       ROS_INFO("FRONT WHEEL STEERING!");
       control_msgs.point_turn_mode = false;
       control_msgs.gear_mode = 1;
     }
-    //按键B
+    //按键B 四轮转向 High speed
     if(js_buttons[1]==1){
       ROS_INFO("FOUR WHEEL STEERING!");
       control_msgs.point_turn_mode = false;
@@ -85,7 +85,6 @@ int main(int argc, char** argv)
 	ros::init(argc, argv, "teleop_twist");
 
 	teleop_twist teleop_turtle;
-  	//signal(SIGINT,quit);
   	ros::Rate loop_rate(100);
   	while (ros::ok()){
     	teleop_turtle.teleopLoop();

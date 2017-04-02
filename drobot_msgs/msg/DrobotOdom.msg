@@ -1,6 +1,6 @@
 Header header
 
-# Travel pules for each wheel
+# Travel pules for each wheel, /90 equals number of tire turns
 int32 left_front_travel
 int32 right_front_travel
 int32 left_rear_travel
